@@ -8,13 +8,14 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView customer,transaction;
+    ImageView customer,transaction,syllabus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         customer=findViewById(R.id.customer);
         transaction=findViewById(R.id.Transactions);
+        syllabus = findViewById(R.id.syllabus);
 
         customer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,history_list.class));
+            }
+        });
+        syllabus.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(MainActivity.this,user_list.class ));
             }
         });
     }
